@@ -1,3 +1,58 @@
+/* 
+colores 
+body
+  background: #F3F5FC;
+  color-font: #0A3871;
+  font-family: inter;
+input-Text
+  size: 32px;
+warning
+  color-font: #495057;
+  font-size: 12px;
+
+button-encrypt-primary
+  background: #0A3871;
+  border-color: #0A3871;
+  color-font: #fff;
+  size: 16px;
+  border-radius: 24px;
+  padding: 24px;
+button-decrypt-disabled
+  background: #D8DFE8;
+  color-font: #0A3871;
+  size: 16px;
+  border-radius: 24px;
+  padding: 24px;
+button-secundary
+  background: #0A3871;
+  border-color: #0A3871;
+  color-font: #fff;
+  size: 16px;
+  border-radius: 24px;
+  padding: 24px;
+
+card-message
+  border-radius: 32px;
+  background: #FFFFFF;
+  box-shadow: 0px 24px 32px -8px #00000014;
+  font-size: 24px;
+  color-font: #495057;
+  card-message-error
+    color-font-title: #343A40;
+    size: 24px;
+    font-weight: 700;
+    color-font-paragraph: #495057;
+    size: 16px;
+*/
+
 h1 {
   background-color: red;
+}
+
+
+@media  screen and (max-width: 768px) {
+  body {
+    padding: 40ox;
+  }
+  
 }
