@@ -1,38 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./reset.css">
-  <link rel="stylesheet" href="./index.css">
-  <title>Encriptador de Texto</title>
-</head>
-<body>
-  
-  <main class="main">
-    <h1 class="title">
-      <img src="./public/Logo.svg" alt="Logo">      
-    </h1>
-    <form class="form">
-      <input class="input-text" type="text" placeholder="Ingrese el texto aqui">
-      <p>Solo letras minúsculas y sin acentos</p>
-      <div class="container-button">
-        <button class="button button-primary">Encriptar</button>
-        <button class="button button-secondary">Desencriptar</button>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./index.css">
+    <title>Encriptador de Texto</title>
+  </head>
+  <body>
+    
+    <main class="main">
+
+      <div class="container-form">
+
+        <h1 class="title">
+          <img src="./public/Logo.svg" alt="Logo">      
+        </h1>
+
+        <form class="form">
+
+          <textarea id="input-text" class="input-text" placeholder="Ingrese el texto aqui"></textarea>
+
+          <div>
+
+            <div class="container-warning">
+              <img class="warning__image" src="./public/bi_exclamation-circle-fill.svg" >
+              <p class="warning__text">Solo letras minúsculas y sin acentos</p>
+            </div>
+
+            <div class="container-button">
+              <button id="btn-encrypt" class="button button-primary">Encriptar</button>
+              <button id="btn-decrypt" class="button button-secondary">Desencriptar</button>
+            </div>
+
+          </div>
+
+        </form>
+
       </div>
-    </form>
 
-    <section class="message" >
-      <img class="message-error__image" src="./public/muñeco.svg" alt="buscando">
-      <h2 class="message-error__title">Ningún mensaje fue encontrado</h2>
-      <p class="message-error__paragraph">Ingresa el texto que desees encriptar o desencriptar.</p>
-    </section>
-  </main>
+      <section class="card-message" >
 
-  <script src="./index.js"></script>
-</body>
+        <article id="container-error" class="container-error">
+          <img class="message-error__image" src="./public/muñeco.svg" alt="buscando">
+          <h2 class="message-error__title">Ningún mensaje fue encontrado</h2>
+          <p class="message-error__paragraph">Ingresa el texto que desees encriptar o desencriptar.</p>
+        </article>
+
+        <article id="container-message" class="container-message">          
+          <p class="message__paragraph">Ingresa el texto que desees encriptar o desencriptar.</p>
+          <button class="button button-secondary card-message__button">Copiar</button>
+        </article>
+
+      </section>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
 </html>
