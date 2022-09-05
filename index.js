@@ -3,9 +3,6 @@ const form = document.getElementById('form')
 const containerError = document.getElementById('container-error');
 const containerMessage = document.getElementById('container-message');
 const messageParagraph = document.getElementById('message__paragraph');
-
-const btnEncrypt = document.getElementById('btn-encrypt');
-const btnDecrypt = document.getElementById('btn-decrypt');
 const btnCopy = document.getElementById('copy');
 
 //función para encriptar
@@ -104,17 +101,9 @@ form.addEventListener('submit', (e) => {
 
   if(message !== '') {
     
-    if(e.submitter.id === 'btn-encrypt') {
-      
-      messageParagraph.innerText = encrypt(message);
-      
-    }
+    if(e.submitter.id === 'btn-encrypt') messageParagraph.innerText = encrypt(message);
     
-    if(e.submitter.id === 'btn-decrypt') {
-      
-      messageParagraph.innerText = decrypt(message);
-      
-    }
+    if(e.submitter.id === 'btn-decrypt') messageParagraph.innerText = decrypt(message);
 
     containerError.style.display = 'none';
     
@@ -132,6 +121,7 @@ form.addEventListener('submit', (e) => {
 
 });
 
+//función para copiar el mensaje
 btnCopy.addEventListener('click', () => {
 
   const input = document.createElement('input');
