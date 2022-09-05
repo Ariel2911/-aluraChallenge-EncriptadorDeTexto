@@ -6,6 +6,7 @@ const messageParagraph = document.getElementById('message__paragraph');
 
 const btnEncrypt = document.getElementById('btn-encrypt');
 const btnDecrypt = document.getElementById('btn-decrypt');
+const btnCopy = document.getElementById('copy');
 
 //función para encriptar
 const encrypt = (message) => {
@@ -87,7 +88,7 @@ const decrypt = (message) => {
       default:
         x = message.charAt(i)
         break;
-    }
+    };
 
     decryptedMessage += x;
 
@@ -128,5 +129,19 @@ form.addEventListener('submit', (e) => {
   };
 
   inputText.value = '';
+
+});
+
+btnCopy.addEventListener('click', () => {
+
+  const input = document.createElement('input');
+
+  document.body.appendChild(input);
+  input.value = messageParagraph.innerHTML;
+
+  input.select();
+  document.execCommand('copy');
+
+  document.body.removeChild(input);
 
 });
