@@ -18,23 +18,23 @@ const encrypt = (message) => {
     
     switch (message.charAt(i)) {
       case 'a':
-        x = 'ai'
+        x = 'ai';
         break;
     
       case 'e':
-        x = 'enter'
+        x = 'enter';
         break;
     
       case 'i':
-        x = 'imes'
+        x = 'imes';
         break;
     
       case 'o':
-        x = 'ober'
+        x = 'ober';
         break;
     
       case 'u':
-        x = 'ufat'
+        x = 'ufat';
         break;
     
       default:
@@ -42,16 +42,63 @@ const encrypt = (message) => {
         break;
     }
 
-    encryptedMessage += x
+    encryptedMessage += x;
 
   };
 
-  return encryptedMessage
+  return encryptedMessage;
 };
 
+//función para desencriptar
+const decrypt = (message) => {
+
+  let decryptedMessage= '';
+
+  for(let i=0; i< message.length; i++) {
+
+    let x = '';
+    
+    switch (message.charAt(i)) {
+      case 'a':
+        x = 'a';
+        ++i;
+        break;
+    
+      case 'e':
+        x = 'e';
+        i+=4;
+        break;
+    
+      case 'i':
+        x = 'i';
+        i+=3;
+        break;
+    
+      case 'o':
+        x = 'o';
+        i+=3;
+        break;
+    
+      case 'u':
+        x = 'u';
+        i+=3;
+        break;
+    
+      default:
+        x = message.charAt(i)
+        break;
+    }
+
+    decryptedMessage += x;
+
+  };
+
+  return decryptedMessage;
+};
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  
   const message = inputText.value.trim().toLowerCase();
 
   if(message !== '') {
@@ -61,7 +108,13 @@ form.addEventListener('submit', (e) => {
       messageParagraph.innerText = encrypt(message);
       
     }
-   
+    
+    if(e.submitter.id === 'btn-decrypt') {
+      
+      messageParagraph.innerText = decrypt(message);
+      
+    }
+
     containerError.style.display = 'none';
     
     containerMessage.style.display = 'flex';
